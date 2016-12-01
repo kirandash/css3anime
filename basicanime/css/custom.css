@@ -14,25 +14,62 @@
 	animation-name: fadeIn;
 }
 
+#block:hover {
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
+}
+
 .animated {
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
-	-webkit-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
+	/*-webkit-animation-iteration-count: 3;
+	animation-iteration-count: 3;
+	-webkit-animation-direction: alternate;
+	animation-direction: alternate; 
+	animation-delay: 2s;
+	-webkit-animation-delay: 2s;*/
+	-webkit-animation-timing-function: ease-in;
+	animation-timing-function: ease-in;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both; /* Remove jerky end effect */
 }
 
 @keyframes fadeIn {
-	0% { opacity: 0; width: 100px; height: 100px; }
-	25% { opacity: 1; }
-	50% { opacity: .5; width: 200px; height: 200px; }
-	75% { opacity: 1; }
-	100% { opacity: 0; width: 0px; height: 0px; }			
+	0% { 
+		opacity: 0; 
+		-webkit-transform: perspective(400px) rotateX(90deg);
+	}
+	100% { 
+		opacity: 100; 
+	    -webkit-transform: perspective(400px) rotateX(-30deg);
+	}			
 }
 
 @-webkit-keyframes fadeIn {
-	0% { opacity: 0; width: 100px; height: 100px; }
-	25% { opacity: 1; }
-	50% { opacity: .5; width: 200px; height: 200px; }
-	75% { opacity: 1; }
-	100% { opacity: 0; width: 0px; height: 0px; }	
+	0% { 
+		opacity: 0; 
+		-webkit-transform: perspective(400px) rotateX(90deg);
+	}
+	100% { 
+		opacity: 100; 
+	    -webkit-transform: perspective(400px) rotateX(-30deg);
+	}		
+}
+
+@keyframes fadeOut {
+	0% { 
+		-webkit-transform: perspective(400px) rotateX(-30deg);
+	}
+	100% { 
+	    -webkit-transform: perspective(400px) rotateX(90deg);
+	}			
+}
+
+@-webkit-keyframes fadeOut {
+	0% { 
+		-webkit-transform: perspective(400px) rotateX(-30deg);
+	}
+	100% { 
+	    -webkit-transform: perspective(400px) rotateX(90deg);
+	}			
 }
