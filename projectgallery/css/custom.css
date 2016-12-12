@@ -44,7 +44,7 @@ h2 {
 	bottom: 0;
 	padding: 12px;
 	text-align: center;
-	/*visibility: hidden;*/
+	visibility: hidden;
 }
 
 .img-click img {
@@ -58,4 +58,112 @@ h2 {
 
 .secondary {
 	margin: 50px auto 200px auto !important;
+}
+
+.img-container {
+	-webkit-transform: perspective(400px) rotateY(8deg);
+	transform: perspective(400px) rotateY(8deg);
+	width: 90%;
+}
+
+.img-container:hover {
+	-webkit-animation-name: thumbTilt;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	-webkit-transition-timing-function: ease-in;
+
+	animation-name: thumbTilt;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	transition-timing-function: ease-in;	
+}
+
+@keyframes thumbTilt {
+	0% {
+		transform: perspective(400px) rotateY(8deg) scale(1); /* current state */
+	}
+	20% {
+		transform: perspective(400px) rotateY(-13deg) scale(1.1); /* Rotate negative */
+	}	
+	100% {
+		transform: perspective(400px) rotateY(0deg) scale(1.2);
+	}	
+}
+
+@-webkit-keyframes thumbTilt {
+	0% {
+		-webkit-transform: perspective(400px) rotateY(8deg) scale(1); /* current state */
+	}
+	20% {
+		-webkit-transform: perspective(400px) rotateY(-13deg) scale(1.1); /* Rotate negative */
+	}	
+	100% {
+		-webkit-transform: perspective(400px) rotateY(0deg) scale(1.2);
+	}	
+}
+
+.img-container:hover .img-info {
+	-webkit-animation-name: infoSlide;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	-webkit-transition-timing-function: ease-in;
+
+	animation-name: infoSlide;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	transition-timing-function: ease-in;	
+}
+
+@keyframes infoSlide {
+	0% {
+		opacity: 0;
+		transform: translateX(2.4em); /* Translate horizontally to a distance of 2.4em */
+	}
+	100% {
+		opacity: 100;
+		transform: translateX(0); /* State without any animation */
+		visibility: visible;
+	}	
+}
+
+@-webkit-keyframes infoSlide {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(2.4em); /* Translate horizontally to a distance of 2.4em */
+	}
+	100% {
+		opacity: 100;
+		-webkit-transform: translateX(0); /* State without any animation */
+		visibility: visible;
+	}	
+}
+
+.img-click img:hover {
+	-webkit-animation-name: imgTransparency;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	-webkit-transition-timing-function: ease-in;
+
+	animation-name: imgTransparency;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	transition-timing-function: ease-in;		
+}
+
+@keyframes imgTransparency {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100;
+	}	
+}
+
+@-webkit-keyframes imgTransparency {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100;
+	}	
 }
