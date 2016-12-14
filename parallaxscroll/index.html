@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parallax Scroll</title>
+</head>
+<meta charset="utf-8">
+<style type="text/css">
+	body {
+		margin: 0px;
+		background: url(bg.jpg) fixed;
+		color: #fff;
+		font-size: 28px;
+		line-height: 42px;
+	}
+	#prlx_lyr_1, #prlx_lyr_2, #prlx_lyr_3 {
+		position: fixed;
+		background: url(circle.png) no-repeat 0px 200px;
+		width: 100%;
+		height: 800px;
+	}
+	#prlx_lyr_2 {
+		background-position: 600px 400px;
+		height: 1000px;
+	}
+	#prlx_lyr_3 {
+		background-position: 300px 250px;
+		height: 1000px;
+	}
+	#content_layer {
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	function parallax() {
+		var prlx_lyr_1 = document.getElementById('prlx_lyr_1');
+		var prlx_lyr_2 = document.getElementById('prlx_lyr_2');
+		var prlx_lyr_3 = document.getElementById('prlx_lyr_3');
+
+		prlx_lyr_1.style.top = - ( window.pageYOffset/4)+'px';
+		prlx_lyr_2.style.top = - ( window.pageYOffset/8)+'px';
+		prlx_lyr_3.style.top = - ( window.pageYOffset/6)+'px';
+		// positioning at 1/4th of rest scroll speed
+	}
+	// any time scrolls parallax run a function and capture is set to false
+	window.addEventListener("scroll", parallax, false);
+</script>
+<body>
+	<div id="prlx_lyr_1"></div>
+	<div id="prlx_lyr_2"></div>
+	<div id="prlx_lyr_3"></div>
+	<div id="content_layer">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac mattis lorem. Nullam ornare est eros, a pretium justo molestie quis. Pellentesque maximus ex vel nisl finibus, id egestas libero porttitor. Sed at ex tincidunt, facilisis purus at, pharetra nunc. Mauris pharetra luctus nisi. Phasellus elementum sit amet risus ac suscipit. Donec id convallis lacus, id bibendum orci. Etiam tortor enim, condimentum sit amet cursus ac, tempus at est.</p>
+		<p>Suspendisse potenti. Vivamus quis lacus at libero suscipit auctor eget nec nisi. Donec semper, est id tincidunt tincidunt, augue lorem eleifend leo, non suscipit turpis eros nec sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend, mauris ut bibendum vehicula, neque metus condimentum erat, id imperdiet nibh velit in sapien. Nunc ut aliquet neque, vel rutrum sapien. Suspendisse potenti. Duis scelerisque massa vitae lorem posuere, non gravida tellus egestas. Aenean ut luctus erat. Mauris commodo felis non sem porttitor finibus.</p>
+		<p>Praesent ut sapien faucibus, molestie tortor sodales, porta sapien. Praesent neque mi, eleifend in ullamcorper tempus, dictum eget lorem. In suscipit malesuada posuere. Nullam sed orci nunc. Mauris sed massa semper, egestas felis auctor, tincidunt orci. Praesent fermentum urna eu urna semper, in fringilla nibh vulputate. Vivamus lorem massa, rhoncus sed aliquet sit amet, luctus nec massa.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac mattis lorem. Nullam ornare est eros, a pretium justo molestie quis. Pellentesque maximus ex vel nisl finibus, id egestas libero porttitor. Sed at ex tincidunt, facilisis purus at, pharetra nunc. Mauris pharetra luctus nisi. Phasellus elementum sit amet risus ac suscipit. Donec id convallis lacus, id bibendum orci. Etiam tortor enim, condimentum sit amet cursus ac, tempus at est.</p>
+		<p>Suspendisse potenti. Vivamus quis lacus at libero suscipit auctor eget nec nisi. Donec semper, est id tincidunt tincidunt, augue lorem eleifend leo, non suscipit turpis eros nec sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eleifend, mauris ut bibendum vehicula, neque metus condimentum erat, id imperdiet nibh velit in sapien. Nunc ut aliquet neque, vel rutrum sapien. Suspendisse potenti. Duis scelerisque massa vitae lorem posuere, non gravida tellus egestas. Aenean ut luctus erat. Mauris commodo felis non sem porttitor finibus.</p>
+		<p>Praesent ut sapien faucibus, molestie tortor sodales, porta sapien. Praesent neque mi, eleifend in ullamcorper tempus, dictum eget lorem. In suscipit malesuada posuere. Nullam sed orci nunc. Mauris sed massa semper, egestas felis auctor, tincidunt orci. Praesent fermentum urna eu urna semper, in fringilla nibh vulputate. Vivamus lorem massa, rhoncus sed aliquet sit amet, luctus nec massa.</p>		
+	</div>
+</body>
+</html>
